@@ -16,7 +16,7 @@ brew "bat"                         # styled cat https://github.com/sharkdp/bat
 brew "broot"                       # navigate directory trees https://dystroy.org/broot/
 brew "cmake"                       # cross-platform make https://cmake.org/
 brew "links"                       # browser http://links.twibright.com/
-brew "youtube-dl "                 # yt downloader https://youtube-dl.org/
+brew "youtube-dl"                  # yt downloader https://youtube-dl.org/
 brew "tmux"                        # terminal multiplexer https://github.com/tmux/tmux/wiki
 brew "tree"                        # recurive dir listing http://mama.indstate.edu/users/ice/tree/
 brew "gping"                       # ping with graph https://github.com/orf/gping
@@ -63,7 +63,6 @@ brew "caddy"                       # web server with https https://caddyserver.c
 brew "coredns"                     # dns server https://coredns.io/
 brew "fx"                          # json processing https://github.com/antonmedv/fx
 brew "k6"                          # load testing https://k6.io/
-brew "secretive"                   # store ssh in secure https://github.com/maxgoedjen/secretive
 brew "exa"                         # ls replacement https://the.exa.website/
 brew "hss"                         # parallel ssh client https://github.com/six-ddc/hss
 brew "asciinema"                   # record & share terminal session https://asciinema.org/
@@ -86,6 +85,7 @@ brew "ncrack"                      # network auth cracking https://nmap.org/ncra
 brew "openjdk"                     # jdk https://openjdk.java.net/
 brew "openssl"                     # Cryptography and SSL/TLS Toolkit https://openssl.org/
 brew "python3"                     # python https://www.python.org/
+brew "python@3.7"                  # python@3.7 https://www.python.org/
 brew "protobuf"                    # data interchange format https://github.com/protocolbuffers/protobuf/
 brew "rustup-init"                 # Rust toolchain installer  https://github.com/rust-lang/rustup
 brew "sqlite"                      # sqlite CLI https://sqlite.org/index.html
@@ -112,6 +112,7 @@ cask "font-meslo-lg"
 cask "font-jetbrains-mono"
 cask "font-source-code-pro"
 
+brew "secretive"                   # store ssh in secure https://github.com/maxgoedjen/secretive
 cask "stretchly"                  # break time reminder https://hovancik.net/stretchly/
 cask "istat-menus"                # system monitor app https://bjango.com/mac/istatmenus/
 cask "meetingbar"                 # show meeting in menubar https://github.com/leits/MeetingBar
