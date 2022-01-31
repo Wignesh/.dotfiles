@@ -1,0 +1,28 @@
+[color]
+	ui = auto
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[user]
+	name = Wignesh
+	email = vignesh@programmer.net
+
+[merge]
+	log = true
+
+[init]
+	defaultBranch = main
