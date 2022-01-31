@@ -327,11 +327,8 @@ install_homebrew
 info "Installing Git & GH"
 brew install git gh
 
-# info "Logging into GH"
-# login_gh
-
 info "Cloning .dotfiles repo from $REPO_URL into $REPO_PATH"
-# git clone "$REPO_URL" "$REPO_PATH"
+git clone "$REPO_URL" "$REPO_PATH"
 
 info "Change path to $REPO_PATH"
 cd "$REPO_PATH" >/dev/null
