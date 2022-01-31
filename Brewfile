@@ -86,7 +86,6 @@ brew ncrack                      # network auth cracking https://nmap.org/ncrack
 brew openjdk                     # jdk https://openjdk.java.net/
 brew openssl                     # Cryptography and SSL/TLS Toolkit https://openssl.org/
 brew python3                     # python https://www.python.org/
-brew python@3.7                  # python 3.7 https://www.python.org/
 brew protobuf                    # data interchange format https://github.com/protocolbuffers/protobuf/
 brew rustup-init                 # Rust toolchain installer  https://github.com/rust-lang/rustup
 brew sqlite                      # sqlite CLI https://sqlite.org/index.html
