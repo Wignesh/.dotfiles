@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 REPO_URL=https://github.com/Wignesh/.dotfiles.git
 REPO_PATH="$HOME/.dotfiles"
 
