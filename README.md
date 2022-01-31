@@ -3,5 +3,5 @@
 My Dotfiles
 
 ```bash
-curl -sO http://dot.v97.dev | bash
+curl -sL http://dot.v97.dev | bash
 ```

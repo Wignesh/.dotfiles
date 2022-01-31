@@ -83,10 +83,6 @@ install_homebrew() {
     fi
 }
 
-login_gh() {
-    gh auth login
-}
-
 install_packages() {
     taps=(
         hashicorp/tap
@@ -192,6 +188,8 @@ install_packages() {
         openssh                     # ssh conectivity tool https://www.openssh.com/
         helm                        # k8s package manager https://helm.sh/
         svn                         # svn
+        git                         #
+        gh                          #
 
     )
     
@@ -327,9 +325,6 @@ info "Bootstraping..."
 
 install_xcode
 install_homebrew
-
-info "Installing Git & GH"
-brew install git gh
 
 info "Cloning .dotfiles repo from $REPO_URL into $REPO_PATH"
 git clone "$REPO_URL" "$REPO_PATH"
