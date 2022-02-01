@@ -238,5 +238,7 @@ success "Finished installing CLIs"
 info "======= Configuration ======="
 stow_dotfiles
 success "Finished stowing dotfiles"
+apply_mac_settings
+success "Finished applying mac settings"
 
 success "Done"
