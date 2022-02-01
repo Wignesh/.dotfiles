@@ -26,17 +26,17 @@ warn() {
 }
 
 install_xcode() {
-    info "Checking Xcode CLI tools"
-    xcode-select -p &> /dev/null
-    if [ $? -ne 0 ]; then
-        info "Xcode CLI tools not found. Installing them..."
-        touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
-        PROD=$(softwareupdate -l |
-            grep "\*.*Command Line" |
-            tail -n 1 | sed 's/^[^C]* //')
-        softwareupdate -i "$PROD" --verbose;
+    if ! xcode-select --print-path &> /dev/null; then
+        info "Installing XCode Command Line Tools..."
+        check=$((xcode-\select --install) 2>&1)
+        str="xcode-select: note: install requested for command line developer tools"
+        while [[ "$check" == "$str" ]];
+        do
+            osascript -e 'tell app "System Events" to display dialog "xcode command-line tools missing." buttons "OK" default button 1 with title "xcode command-line tools"'
+        done
+        success "XCode Command Line Tools installed"
     else
-        info "Xcode CLI tools OK"
+        warn "XCode Command Line Tools already installed"
     fi
 }
 
