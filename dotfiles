@@ -119,30 +119,26 @@ install_awscli() {
 }
 
 stow_dotfiles() {
-    if [[ -d ~/.dotfiles ]]; then
-        warn "stow already installed, skipping..."
-    else
-        info "Stowing dotfiles..."
+    info "Stowing dotfiles..."
 
-        local files=(
-            ".gitconfig"
-            ".zshrc"
-            ".p10k.sh"
-            ".config/iterm2/com.googlecode.iterm2.plist"
-        )
+    local files=(
+        ".gitconfig"
+        ".zshrc"
+        ".p10k.sh"
+        ".config/iterm2/com.googlecode.iterm2.plist"
+    )
 
-        info "Removing existing config files"
+    info "Removing existing config files"
 
-        for file in "${files[@]}"; do
-            rm -rf "$HOME/$file"
-        done
+    for file in "${files[@]}"; do
+        rm -rf "$HOME/$file"
+    done
 
-        local dotfiles="git iterm2 zsh"
+    local dotfiles="git iterm2 zsh"
 
-        stow -d ~/.dotfiles/.dots --verbose 1 -t ~/ $dotfiles
+    stow -d ~/.dotfiles/.dots --verbose 1 -t ~/ $dotfiles
 
-        success "dotfiles stowed"
-    fi
+    success "dotfiles stowed"
 }
 
 clone_dotfiles_repo() {
