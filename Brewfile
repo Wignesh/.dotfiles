@@ -90,7 +90,7 @@ brew "python@3.7"                  # python@3.7 https://www.python.org/
 # brew "rustup-init"                 # Rust toolchain installer  https://github.com/rust-lang/rustup
 # brew "sqlite"                      # sqlite CLI https://sqlite.org/index.html
 # brew "stern"                       # tail multiple pods on k8s https://github.com/stern/stern
-# brew "stow"                        # symlink manager https://www.gnu.org/software/stow/
+brew "stow"                        # symlink manager https://www.gnu.org/software/stow/
 # brew "telnet"                      # telent cli https://opensource.apple.com/
 # brew "websocat"                    # telnet-like for websockets https://github.com/vi/websocat
 # brew "yarn"                        # js package manager https://yarnpkg.com/
