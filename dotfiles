@@ -37,6 +37,60 @@ install_xcode() {
     fi
 }
 
+apply_mac_settings() {
+    sudo -v
+    # set touchpad tracking speed to maximum
+    defaults write -g com.apple.trackpad.scaling -float 3.0
+
+    # auto hide dock
+    defaults write com.apple.dock autohide -bool true
+
+    # dock position on left
+    defaults write com.apple.dock orientation -string "left"
+
+    # enable tap to click
+    defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+    # disable screen saver
+    defaults -currentHost write com.apple.screensaver idleTime -int 0
+
+    # dock size small
+    defaults write com.apple.dock tilesize -int 36
+
+    #dock enable magnification
+    defaults write com.apple.dock magnification -bool true
+
+    # dont' show recent applications in dock
+    defaults write com.apple.dock show-recents -bool false
+
+    # show bluetooth in menu bar
+    defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Bluetooth -int 2
+
+    # show battery percentage in menu bar
+    defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true
+
+    # clock show seconds
+    defaults write ~/Library/Preferences/com.apple.menuextra.clock DateFormat -string "EEE MMM d  h:mm:ss a"
+
+    # Finder: show hidden files by default
+    defaults write com.apple.finder AppleShowAllFiles -bool true
+
+    # Finder: show status bar
+    defaults write com.apple.finder ShowStatusBar -bool true
+
+    # Finder: show path bar
+    defaults write com.apple.finder ShowPathbar -bool true
+
+    # Disable the warning when changing a file extension
+    defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+    # Show the ~/Library folder
+    chflags nohidden ~/Library
+
+    # Show the /Volumes folder
+    sudo chflags nohidden /Volumes
+}
+
 install_homebrew() {
     if hash brew &>/dev/null; then
         warn "Homebrew already installed, skipping..."
