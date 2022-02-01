@@ -26,62 +26,133 @@ warn() {
 }
 
 install_xcode() {
-    if xcode-select -p > /dev/null; then
-        warn "xCode Command Line Tools already installed"
-    else
-        info "Installing xCode Command Line Tools..."
+    if ! xcode-select --print-path &> /dev/null; then
+        info "Installing XCode Command Line Tools..."
         xcode-select --install
-        sudo xcodebuild -license accept
+        success "XCode Command Line Tools installed"
+    else
+        warn "XCode Command Line Tools already installed"
     fi
 }
 
 install_homebrew() {
-    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
     if hash brew &>/dev/null; then
-        warn "Homebrew already installed"
+        warn "Homebrew already installed, skipping..."
     else
         info "Installing homebrew..."
         sudo --validate  # reset `sudo` timeout to use Homebrew install in noninteractive mode
         CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        success "Homebrew installed"
     fi
 }
 
-install_oh_my_zsh() {
-    if [[ ! -f ~/.zshrc ]]; then
-        info "Installing oh my zsh..."
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-        
-        chmod 744 ~/.oh-my-zsh/oh-my-zsh.sh
-        
-        info "Installing powerlevel10k"
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-        git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+install_zsh_plugins() {
+    if [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+        warn "zsh-autosuggestions already installed, skipping..."
     else
-        warn "oh-my-zsh already installed"
+        info "Installing zsh-autosuggestions..."
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        success "zsh-autosuggestions installed"
+    fi
+
+    if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+        warn "zsh-syntax-highlighting already installed, skipping..."
+    else
+        info "Installing zsh-syntax-highlighting..."
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+        success "zsh-syntax-highlighting installed"
+    fi
+
+    if [ -d ~/.oh-my-zsh/custom/plugins/zsh-completions ]; then
+        warn "zsh-completions already installed, skipping..."
+    else
+        info "Installing zsh-completions..."
+        git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+        success "zsh-completions installed"
+    fi
+}
+
+install_power10k() {
+    if [ ! -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]; then
+        info "Installing powerlevel10k..."
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+        success "powerlevel10k installed"
+    else
+        warn "powerlevel10k already installed, skipping..."
+    fi
+    install_zsh_plugins
+}
+
+install_oh_my_zsh() {
+    if [ -d "$HOME/.oh-my-zsh" ]; then
+        warn "Oh My Zsh already installed, skipping..."
+    else
+        info "Installing Oh My Zsh..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+        chmod 744 ~/.oh-my-zsh/oh-my-zsh.sh
+        success "Oh My Zsh installed"
+    fi
+    install_power10k
+}
+
+install_nvm() {
+    if [[ ! -d ~/.nvm ]]; then
+        info "Installing nvm..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        success "nvm installed"
+    else
+        warn "nvm already installed, skipping..."
+    fi
+}
+
+install_awscli() {
+    if hash aws &>/dev/null; then
+        warn "awscli already installed, skipping..."
+    else
+        info "Installing awscli..."
+        curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+        sudo installer -pkg AWSCLIV2.pkg -target /
+        aws --version
+        rm AWSCLIV2.pkg || true
+        success "awscli installed"
     fi
 }
 
 stow_dotfiles() {
+    if [[ -d ~/.dotfiles ]]; then
+        warn "stow already installed, skipping..."
+    else
+        info "Stowing dotfiles..."
 
-    local files=(
-        ".gitconfig"
-        ".zshrc"
-        ".p10k.sh"
-        ".config/iterm2/com.googlecode.iterm2.plist"
-    )
+        local files=(
+            ".gitconfig"
+            ".zshrc"
+            ".p10k.sh"
+            ".config/iterm2/com.googlecode.iterm2.plist"
+        )
 
-    info "Removing existing config files"
+        info "Removing existing config files"
 
-    for f in $files; do
-        rm -rf "$HOME/$f"
-    done
+        for file in "${files[@]}"; do
+            rm -rf "$HOME/$file"
+        done
 
-    local dotfiles="git iterm2 zsh"
+        local dotfiles="git iterm2 zsh"
 
-    stow -d ~/.dotfiles/.dots --verbose 1 -t ~/ $dotfiles
+        stow -d ~/.dotfiles/.dots --verbose 1 -t ~/ $dotfiles
 
+        success "dotfiles stowed"
+    fi
+}
+
+clone_dotfiles_repo() {
+    if [[ -d "$REPO_PATH" ]]; then
+        warn "dotfiles already cloned, skipping..."
+    else
+        info "Cloning dotfiles repo..."
+        git clone "$REPO_URL" "$REPO_PATH"
+        success "dotfiles cloned"
+    fi
 }
 
 info "Bootstraping..."
@@ -90,33 +161,22 @@ install_xcode
 install_homebrew
 
 info "Cloning .dotfiles repo from $REPO_URL into $REPO_PATH"
-git clone "$REPO_URL" "$REPO_PATH"
+clone_dotfiles_repo
 
 info "Change path to $REPO_PATH"
 cd "$REPO_PATH" >/dev/null
 
 info "======= Homebrew packages ======="
-sudo -v
 brew bundle --file=~/.dotfiles/Brewfile
 success "Finished installing Homebrew packages"
 
-info "Installing nvm..."
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-info "Installing aws cli..."
-
-curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-
-sudo installer -pkg AWSCLIV2.pkg -target /
-
-aws --version
-
-rm AWSCLIV2.pkg || true
+info "======= CLIs ======="
+install_nvm
+install_awscli
+success "Finished installing CLIs"
 
 info "======= Configuration ======="
 stow_dotfiles
-
 success "Finished stowing dotfiles"
 
 success "Done"
