@@ -27,24 +27,14 @@ warn() {
 
 install_xcode() {
     if ! xcode-select --print-path &> /dev/null; then
-        info "Installing XCode Command Line Tools..."
-        xcode-select --install > /dev/null 2>&1
-        if [ 0 == $? ]; then
-            sleep 1
-            osascript <<EOD
-tell application "System Events"
-    tell process "Install Command Line Developer Tools"
-        keystroke return
-        click button "Agree" of window "License Agreement"
-    end tell
-end tell
-EOD
-        else
-            info "Command Line Developer Tools are already installed!"
-        fi
-        success "XCode Command Line Tools installed"
+        info "XCode Command Line Tools are required to install Homebrew"
+        info "XCode is not installed. Installing XCode Command Line Tools..."
+        info "Please complete the XCode Command Line Tools installation process,"
+        info "then re-run this script."
+        xcode-select --install
+        exit 1
     else
-        warn "XCode Command Line Tools already installed"
+        warn "XCode Command Line Tools installed"
     fi
 }
 
