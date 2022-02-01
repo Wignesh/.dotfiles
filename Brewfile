@@ -112,7 +112,7 @@ cask "font-meslo-lg"
 cask "font-jetbrains-mono"
 cask "font-source-code-pro"
 
-brew "secretive"                   # store ssh in secure https://github.com/maxgoedjen/secretive
+cask "secretive"                   # store ssh in secure https://github.com/maxgoedjen/secretive
 cask "stretchly"                  # break time reminder https://hovancik.net/stretchly/
 cask "istat-menus"                # system monitor app https://bjango.com/mac/istatmenus/
 cask "meetingbar"                 # show meeting in menubar https://github.com/leits/MeetingBar
