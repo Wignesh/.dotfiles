@@ -157,3 +157,4 @@ cask "webex"                      # video communication https://www.webex.com/
 cask "zoom"                       # video communication https://www.zoom.us/
 
 mas "LastPass Password Manager", id: 926036361
+mas "OwlOCR - Screenshot to Text", id: 1499181666
