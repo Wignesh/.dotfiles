@@ -1,16 +1,19 @@
 setopt nobeep
+zmodload zsh/zprof
+start=$(date +%s)
+# set -x
 
 #### FIG ENV VARIABLES #### Hi
 # Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
 #### END FIG ENV VARIABLES ####
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -20,6 +23,11 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/python@3.7/lib"
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=false
+export DISABLE_AUTO_UPDATE=true
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle ':completion:*:*:docker:*' option-stacking yes
@@ -107,6 +115,10 @@ function getcertnames() {
 	fi;
 }
 
+function lk {
+  cd "$(walk "$@")"
+}
+
 # Aliases
 alias kc=kubectl
 alias ok=okteto
@@ -116,6 +128,7 @@ alias mk=minikube
 
 alias ch='history | grep "git commit"'
 alias hg='history | grep'
+alias spin='~/spin'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -136,7 +149,7 @@ alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 
-
+alias vaults="cd /Volumes/Vault/"
 alias tf=terraform
 alias asc=asciinema
 alias av=aws-vault
@@ -146,6 +159,7 @@ alias runp='lsof -i'
 alias c="code ."
 alias ll="ls -1a"
 alias pg="echo 'Pinging Google' && ping www.google.com"
+alias itest="while true; do ping -q -c1 google.com &>/dev/null && : || say -v Boing BE DO BE DO BE DO,,, Uh,, We lost the connection; sleep 2; done"
 
 alias gcm="git checkout master";
 alias gs="git status";
@@ -216,34 +230,60 @@ alias pys="source venv/bin/activate"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-
-plugins=(zsh-syntax-highlighting git alias-finder ansible terraform aws brew common-aliases compleat docker docker-compose encode64 flutter gcloud gh golang helm heroku history kubectl minikube mongocli mvn ng nmap node nomad npm nvm python redis-cli ssh-agent vault zsh-autosuggestions zsh-completions)
-
-autoload -U compinit && compinit
-
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 SHOW_AWS_PROMPT=true
 
+plugins=(zsh-syntax-highlighting git alias-finder aws common-aliases docker docker-compose gh history kubectl zsh-autosuggestions zsh-completions zsh-nvm evalcache)
+
+# autoload -U compinit && compinit
+
 source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/.p10k.zsh
+# source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+# source $HOME/.p10k.zsh
 
 
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# if type brew &>/dev/null
+# then
+#   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-  autoload -Uz compinit
-  compinit
-fi
+#   autoload -Uz compinit
+#   compinit
+# fi
 
-autoload -U +X bashcompinit && bashcompinit
+# autoload -U +X bashcompinit && bashcompinit
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+# source <(ng completion script)
+
+# Created by `pipx` on 2022-12-14 18:44:59
+export PATH="$PATH:/Users/vignesh/.local/bin"
+
+# test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh --silent)
+
+# bun completions
+[ -s "/Users/vignesh/.bun/_bun" ] && source "/Users/vignesh/.bun/_bun"
+
+end=$(date +%s)
+runtime=$(python3 -c "print(${end} - ${start})")
+echo "Loaded in ${runtime} seconds."
+# set +x
+
+source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode
