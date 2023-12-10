@@ -150,6 +150,7 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 
 
 alias vaults="cd /Volumes/Vault/"
+alias gits="cd /Volumes/Vault/Git/"
 alias tf=terraform
 alias asc=asciinema
 alias av=aws-vault

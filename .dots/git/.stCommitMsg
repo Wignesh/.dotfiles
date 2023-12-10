@@ -1,0 +1,121 @@
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Conventional commit message format: [Conventional Commits](https://www.conventionalcommits.org/)
+
+# <type>[optional scope]: <description>
+
+# [optional body]
+
+# [optional footer(s)]
+
+# <type> can be any of the following:
+#   `build`     (changes that affect the build system or external dependencies)
+#   `chore`     (updating grunt tasks etc; no production code change)
+#   `ci`        (changes to our CI configuration files and scripts)
+#   `docs`      (changes to documentation)
+#   `feat`      (new feature) : this correlates with `MINOR` in `SemVer` (semantic versioning)
+#   `fix`       (bug fix) : this correlates with `PATCH` in `SemVer` (semantic versioning)
+#   `ops`       (changes that affect the operations of the system)
+#   `perf`      (a code change that improves performance)
+#   `refactor`  (refactoring production code)
+#   `revert`    (revert to a commit)
+#   `style`     (formatting, missing semi colons, etc; no code change)
+#   `test`      (adding missing tests, refactoring tests; no production code change)
+#   `wip`       (Work In Progress)
+
+# <scope> can be anything specifying place of the commit change.
+#   - for e.g., `$location`, `$browser`, `$compile`, `$rootScope`, `ngHref`, `ngClick`, `ngView`, etc.
+#   - scopes are optional, but recommended as per convention
+#   - allowed scope depends on the project
+# `Example`:
+#   feat(server): add socket support
+#   fix(client): handle errors when event source fails to open connection
+#   docs(guide): updated fixed typos in tutorial
+#   docs(api): document $location
+#   style(pencil): remove graphiteWidth option for graphiteWidth option
+#   refactor(pencil): use graphiteWidth option
+#   test(pencil): use graphiteWidth option to calculate pencil width
+#   ci(travis): run tests on travis ci
+
+# <breaking-changes> must be indicated after the <type/scope> and before the colon(`:`)
+# by an exclamation mark (`!`). this correlates with `MAJOR` in `SemVer` (semantic versioning)
+# `Examples`:
+#   feat(api)!: remove status endpoint
+#   refactor(code)!: drop support for Node 6
+
+# <description> should provide a succinct description of the change:
+#   - is a mandatory part of the commit message
+#   - use the imperative, present tense: "change" not "changed" nor "changes"
+#   - think of it like "this commit will ..." or "this commit changes ..."
+#   - don't capitalize first letter
+#   - no dot (.) at the end
+#   - reference issues and pull requests liberally
+#   - is a good idea to use the body to explain what and why vs. how
+# `Examples`:
+#   fix(util):array parsing issue when multiple spaces were contained in string
+#   feat(login): add OAuth login
+#   docs(guide): add documentation regarding filters
+#   style($location): add missing semi colons
+
+# <body> should include the motivation for the change and contrast this with previous behavior.
+#   - is a `optional` part of the commit message
+#   - use the imperative, present tense: "change" not "changed" nor "changes"
+#   - this place is good for explaining the context and/or the motivation behind the commit
+#   - must be used after a blank line following the description
+#   - is a free-form text, may contain any number of newline separated paragraphs
+# `Example`:
+#   fix: prevent racing of requests
+#
+#   Introduce a request id and a reference to latest request. Dismiss
+#   incoming responses other than from latest request.
+#
+#   Remove timeouts which were used to mitigate the racing issue but are
+#   obsolete now.
+
+# <footer> should contain any information about breaking changes and is also the place to
+# reference issues that this commit refers to.
+#   - is a `optional` part of the commit message
+#   - each footer must consist of a word token, followed by either
+#   - a :<space> or <space># separator, followed by a string value
+#   - a footer’s token must use - in place of whitespace characters,
+#   - e.g., acked-by (this helps differentiate the footer section from a multi-paragraph body).
+#   - an exception is made for `BREAKING CHANGE`, which may also be used as a token.
+#   - a footer’s value may contain spaces and newlines, and parsing must terminate when
+#   - the next valid footer token/separator pair is observed.
+#   - breaking changes must be indicated in the <type/scope> prefix of a commit, or as an entry in the footer.
+#   - if included as a footer, a breaking change must consist of the uppercase text `BREAKING CHANGE`,
+#   - followed by a colon(`:`), space, and description,
+#   - e.g., BREAKING CHANGE: environment variables now take precedence over config files.
+#   - if included in the <type/scope> prefix, breaking changes must be indicated by a `!` immediately before the `:`.
+#   - if `!` is used, `BREAKING CHANGE:` may be omitted from the footer section, and the commit description shall
+#   - be used to describe the breaking change.
+
+# `Examples`:
+#   fix: prevent racing of requests
+#
+#   Introduce a request id and a reference to latest request. Dismiss
+#   incoming responses other than from latest request.
+#
+#   Remove timeouts which were used to mitigate the racing issue but are
+#   obsolete now.
+#
+#   BREAKING CHANGE: environment variables now take precedence over config files.
+#   Refs: #123, #456
+#   Acked-by: @user1, @user2
+#   Reviewed-by: @user3, @user4
+#   Closes: #789, #1011
+
+#   feat: allow overriding of config via env vars
+#
+#   Allow users to override config settings via environment variables.
+#   The env vars and corresponding config keys are listed below:
+#
+#   - `API_URL`: `apiUrl`
+#   - `API_KEY`: `apiKey`
+#
+#   BREAKING CHANGE: environment variables now take precedence over config files.
+#   Refs: #123, #456
+#   Acked-by: @user1, @user2
+#   Reviewed-by: @user3, @user4
+#   Closes: #789, #1011
+
