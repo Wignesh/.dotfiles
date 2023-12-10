@@ -3,18 +3,22 @@ tap "common-fate/granted"
 tap "datawire/blackbird"
 tap "hashicorp/tap"
 tap "heroku/brew"
+tap "hettysoft/tap"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "jesseduffield/lazygit"
+tap "libsql/sqld"
 tap "moncho/dry"
 tap "moncho/dry"
 tap "oven-sh/bun"
+tap "pkgxdev/made"
 tap "Qovery/replibyte"
 tap "teamookla/speedtest"
+tap "tursodatabase/tap"
 tap "vmware-tanzu/carvel"
 
-brew  "cfn-lint"                    # cloudformation linter https://github.com/aws-cloudformation/cfn-lint/
+brew "cfn-lint"                    # cloudformation linter https://github.com/aws-cloudformation/cfn-lint/
 brew "ack"                         # search tool https://beyondgrep.com/
 brew "ansible"                     # ansible cli https://www.ansible.com/
 brew "asciinema"                   # record & share terminal session https://asciinema.org/
@@ -60,7 +64,7 @@ brew "hashicorp/tap/waypoint"      # app deployment https://www.waypointproject.
 brew "hasura-cli"                  # hasura cli https://hasura.io/
 brew "helm"                        # k8s package manager https://helm.sh/
 brew "heroku"                      # heroku cli https://www.heroku.com/
-brew "hettysoft/tap/hetty"         # http toolkit https://github.com/dstotijn/hetty
+brew "hetty"         # http toolkit https://github.com/dstotijn/hetty
 brew "hss"                         # parallel ssh client https://github.com/six-ddc/hss
 brew "http-server"                 # https://github.com/http-party/http-server
 brew "httpie"                      # cURL replacement https://httpie.io/
@@ -84,7 +88,7 @@ brew "lazydocker"                  # docker terminal UI https://github.com/jesse
 brew "lazygit"                     # git terminal ui https://github.com/jesseduffield/lazygit
 brew "libpq"                       # postgres api library https://www.postgresql.org/docs/14/libpq.html
 brew "librsvg"                     # svg library https://wiki.gnome.org/Projects/LibRsvg
-brew "libsql/sqld/sqld"            # LibSQL https://github.com/libsql/sqld
+brew "sqld"            # LibSQL https://github.com/libsql/sqld
 brew "links"                       # browser http://links.twibright.com/
 brew "lua"                         # https://www.lua.org/
 brew "lxc"                         # lxd cli https://linuxcontainers.org/
@@ -104,7 +108,7 @@ brew "openssh"                     # ssh conectivity tool https://www.openssh.co
 brew "openssl"                     # Cryptography and SSL/TLS Toolkit https://openssl.org/
 brew "p7zip"                       # 7zip https://github.com/p7zip-project/p7zip
 brew "pgcli"                       # postgres cli https://www.pgcli.com/
-brew "pkgxdev/made/pkgx"           # pkgx “run anything” https://github.com/pkgxdev/pkgx
+brew "pkgx"           # pkgx “run anything” https://github.com/pkgxdev/pkgx
 brew "pnpm"                        # node package manager https://pnpm.io/
 brew "poppler"                     # pdf toolkit https://poppler.freedesktop.org/
 brew "portaudio"                   # audio library https://www.portaudio.com/
@@ -112,7 +116,6 @@ brew "protobuf"                    # data interchange format https://github.com/
 brew "pstree"                      # ps as tree http://www.thp.uni-duisburg.de/pstree/
 brew "pulumi"                      # cloud native dev platform https://pulumi.io/
 brew "pyenv"                       # python version management https://github.com/pyenv/pyenv
-brew "python@3.7"                  # python@3.7 https://www.python.org/
 brew "python3"                     # python https://www.python.org/
 brew "rclone"                      # rsync for cloud storage https://rclone.org/
 brew "replibyte"                   # replibyte database seed https://github.com/qovery/replibyte
@@ -132,7 +135,7 @@ brew "the_silver_searcher"         # code search https://github.com/ggreer/the_s
 brew "tldr"                        # man page https://tldr.sh/
 brew "tmux"                        # terminal multiplexer https://github.com/tmux/tmux/wiki
 brew "tree"                        # recurive dir listing http://mama.indstate.edu/users/ice/tree/
-brew "tursodatabase/tap/turso"     # turso cli https://github.com/tursodatabase/turso-cli
+brew "turso"     # turso cli https://github.com/tursodatabase/turso-cli
 brew "unar"                        # unarchiving tool https://theunarchiver.com/command-line
 brew "walk"                        # walk file tree https://github.com/antonmedv/walk
 brew "watch"                       # execure cmd periodically https://gitlab.com/procps-ng/procps

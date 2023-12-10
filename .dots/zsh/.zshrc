@@ -274,12 +274,12 @@ export PATH="$HOME/.amplify/bin:$PATH"
 # source <(ng completion script)
 
 # Created by `pipx` on 2022-12-14 18:44:59
-export PATH="$PATH:/Users/vignesh/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh --silent)
 
 # bun completions
-[ -s "/Users/vignesh/.bun/_bun" ] && source "/Users/vignesh/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 end=$(date +%s)
 runtime=$(python3 -c "print(${end} - ${start})")
