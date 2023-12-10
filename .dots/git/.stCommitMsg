@@ -3,10 +3,21 @@
 # Conventional commit message format: [Conventional Commits](https://www.conventionalcommits.org/)
 
 # <type>[optional scope]: <description>
+# feat:
+# fix:
+# docs:
+# chore:
+# test:
 
 # [optional body]
 
+
 # [optional footer(s)]
+# Acked-by: 
+# Reviewed-by: 
+# Closes: 
+# Refs: 
+# BREAKING CHANGE:
 
 # <type> can be any of the following:
 #   `build`     (changes that affect the build system or external dependencies)
