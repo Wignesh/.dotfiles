@@ -1,6 +1,7 @@
 tap "cloudflare/cloudflare"
 tap "common-fate/granted"
 tap "datawire/blackbird"
+tap "espanso/espanso"
 tap "hashicorp/tap"
 tap "heroku/brew"
 tap "hettysoft/tap"
@@ -18,7 +19,7 @@ tap "teamookla/speedtest"
 tap "tursodatabase/tap"
 tap "vmware-tanzu/carvel"
 
-brew "cfn-lint"                    # cloudformation linter https://github.com/aws-cloudformation/cfn-lint/
+brew "1password-cli"               # 1password cli https://1password.com/
 brew "ack"                         # search tool https://beyondgrep.com/
 brew "ansible"                     # ansible cli https://www.ansible.com/
 brew "asciinema"                   # record & share terminal session https://asciinema.org/
@@ -30,6 +31,7 @@ brew "bazel"                       # build tool https://bazel.build/
 brew "broot"                       # navigate directory trees https://dystroy.org/broot/
 brew "bun"                         # bun runtime & cli https://github.com/oven-sh/bun
 brew "caddy"                       # web server with https https://caddyserver.com/
+brew "cfn-lint"                    # cloudformation linter https://github.com/aws-cloudformation/cfn-lint/
 brew "cloudflare-wrangler"         # cli for cf workers https://github.com/cloudflare/wrangler
 brew "cloudflared"                 # cloudflare tunel client https://github.com/cloudflare/cloudflared
 brew "cmake"                       # cross-platform make https://cmake.org/
@@ -88,7 +90,6 @@ brew "lazydocker"                  # docker terminal UI https://github.com/jesse
 brew "lazygit"                     # git terminal ui https://github.com/jesseduffield/lazygit
 brew "libpq"                       # postgres api library https://www.postgresql.org/docs/14/libpq.html
 brew "librsvg"                     # svg library https://wiki.gnome.org/Projects/LibRsvg
-brew "sqld"            # LibSQL https://github.com/libsql/sqld
 brew "links"                       # browser http://links.twibright.com/
 brew "lua"                         # https://www.lua.org/
 brew "lxc"                         # lxd cli https://linuxcontainers.org/
@@ -97,6 +98,7 @@ brew "minikube"                    # local k8s cluster https://minikube.sigs.k8s
 brew "mitmproxy"                   # https proxy https://mitmproxy.org/
 brew "mkcert"                      # create local CA https://github.com/FiloSottile/mkcert
 brew "mongocli"                    # mongodb cli https://github.com/mongodb/mongodb-atlas-cli
+brew "navi"                        # cheatsheet https://github.com/denisidoro/navi
 brew "ncrack"                      # network auth cracking https://nmap.org/ncrack/
 brew "neovim"                      # vim fork https://neovim.io/
 brew "netcat"                      # manage network connection https://netcat.sourceforge.io/
@@ -123,6 +125,7 @@ brew "rsync"                       # incremental file transfer https://rsync.sam
 brew "rustup-init"                 # Rust toolchain installer  https://github.com/rust-lang/rustup
 brew "scrcpy"                      # android screen mirroring https://github.com/Genymobile/scrcpy
 brew "speedtest"                   # speedtest cli https://www.speedtest.net/
+brew "sqld"            # LibSQL https://github.com/libsql/sqld
 brew "sqlite"                      # sqlite CLI https://sqlite.org/index.html
 brew "stern"                       # tail multiple pods on k8s https://github.com/stern/stern
 brew "stow"                        # symlink manager https://www.gnu.org/software/stow/
@@ -135,7 +138,7 @@ brew "the_silver_searcher"         # code search https://github.com/ggreer/the_s
 brew "tldr"                        # man page https://tldr.sh/
 brew "tmux"                        # terminal multiplexer https://github.com/tmux/tmux/wiki
 brew "tree"                        # recurive dir listing http://mama.indstate.edu/users/ice/tree/
-brew "turso"     # turso cli https://github.com/tursodatabase/turso-cli
+brew "turso"                       # turso cli https://github.com/tursodatabase/turso-cli
 brew "unar"                        # unarchiving tool https://theunarchiver.com/command-line
 brew "walk"                        # walk file tree https://github.com/antonmedv/walk
 brew "watch"                       # execure cmd periodically https://gitlab.com/procps-ng/procps
@@ -144,7 +147,6 @@ brew "wget"                        # file retriver https://www.gnu.org/software/
 brew "wrk"                         # http benchmarking https://github.com/wg/wrk
 brew "yarn"                        # js package manager https://yarnpkg.com/
 brew "youtube-dl"                  # yt downloader https://youtube-dl.org/
-brew "1password-cli"               # 1password cli https://1password.com/
 
 cask "font-caskaydia-cove-nerd-font"
 cask "font-consolas-for-powerline"
@@ -160,6 +162,7 @@ cask "font-source-code-pro"
 cask "cloudflare-warp"            # warp client https://cloudflarewarp.com/
 cask "docker"                     # container runtime https://www.docker.com/
 cask "dozer"                      # hide status bar icons https://github.com/Mortennn/Dozer
+cask "espanso"                    # text expander https://espanso.org/
 cask "figma"                      # collabrartive team https://www.figma.com/
 cask "firefox"                    # firefox browser https://www.mozilla.org/firefox/
 cask "google-chrome"              # google chrome browser https://www.google.com/chrome/
@@ -179,6 +182,8 @@ cask "muzzle"                     # silence notifications https://muzzleapp.com/
 cask "obsidian"                   # md editor https://obsidian.md/
 cask "orbstack"                   # orbstack https://github.com/orbstack/orbstack
 cask "postman"                    # api development https://www.postman.com/
+cask "proxyman"                   # proxyman https://proxyman.io/
+cask "rar"                        # rar archiver https://www.rarlab.com/
 cask "raycast"                    # spotlight replacement https://raycast.com/
 cask "rectangle"                  # window snap area https://rectangleapp.com/
 cask "secretive"                  # store ssh in secure https://github.com/maxgoedjen/secretive
@@ -186,6 +191,7 @@ cask "shottr"                     # screenshot tool https://shottr.cc/
 cask "stretchly"                  # break time reminder https://hovancik.net/stretchly/
 cask "visual-studio-code"         # code editor https://code.visualstudio.com/
 cask "vlc"                        # multimedia player
+cask "webtorrent"                 # torrent client https://webtorrent.io/
 
 mas "OwlOCR", id: -2127579473
 mas "QuickShade", id: 931571202
