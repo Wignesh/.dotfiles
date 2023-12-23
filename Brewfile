@@ -159,6 +159,7 @@ cask "font-meslo-lg-nerd-font"
 cask "font-meslo-lg"
 cask "font-source-code-pro"
 
+cask "alt-tab"                    # alt-tab replacement https://alt-tab-macos.netlify.app/
 cask "cloudflare-warp"            # warp client https://cloudflarewarp.com/
 cask "docker"                     # container runtime https://www.docker.com/
 cask "dozer"                      # hide status bar icons https://github.com/Mortennn/Dozer
