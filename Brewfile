@@ -80,7 +80,6 @@ brew "lua"                         # https://www.lua.org/
 brew "lxc"                         # lxd cli https://linuxcontainers.org/
 brew "mas"                         # mac app store cli https://github.com/mas-cli/mas
 brew "minikube"                    # local k8s cluster https://minikube.sigs.k8s.io/docs/
-brew "mitmproxy"                   # https proxy https://mitmproxy.org/
 brew "mkcert"                      # create local CA https://github.com/FiloSottile/mkcert
 brew "mongocli"                    # mongodb cli https://github.com/mongodb/mongodb-atlas-cli
 brew "navi"                        # cheatsheet https://github.com/denisidoro/navi
@@ -163,6 +162,7 @@ cask "lens"                       # k8s ide https://k8slens.dev/
 cask "maccy"                      # clipboard manager https://maccy.app/
 cask "microsoft-edge"             # microsoft edge https://www.microsoft.com/en-us/edge
 cask "microsoft-office"           # ms office https://products.office.com/mac/microsoft-office-for-mac/
+cask "mitmproxy"                   # https proxy https://mitmproxy.org/
 cask "muzzle"                     # silence notifications https://muzzleapp.com/
 cask "obsidian"                   # md editor https://obsidian.md/
 cask "orbstack"                   # orbstack https://github.com/orbstack/orbstack
