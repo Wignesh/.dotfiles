@@ -1,8 +1,6 @@
 tap "cloudflare/cloudflare"
 tap "common-fate/granted"
-tap "datawire/blackbird"
 tap "espanso/espanso"
-tap "hashicorp/tap"
 tap "heroku/brew"
 tap "hettysoft/tap"
 tap "homebrew/cask-fonts"
@@ -16,7 +14,6 @@ tap "pkgxdev/made"
 tap "Qovery/replibyte"
 tap "teamookla/speedtest"
 tap "tursodatabase/tap"
-tap "vmware-tanzu/carvel"
 
 brew "1password-cli"               # 1password cli https://1password.com/
 brew "ack"                         # search tool https://beyondgrep.com/
@@ -55,16 +52,10 @@ brew "gping"                       # ping with graph https://github.com/orf/gpin
 brew "granted"                     # cloud access manager https://github.com/common-fate/granted
 brew "guile"                       # https://www.gnu.org/software/guile/
 brew "h2o"                         # HTTP/1.x and HTTP/2 server https://github.com/h2o/h2o/
-brew "hashicorp/tap/boundary"      # secure remote access https://www.boundaryproject.io/
-brew "hashicorp/tap/consul"        # service mesh from hc https://www.consul.io/
-brew "hashicorp/tap/nomad"         # scheduler and workload orchestrator https://www.nomadproject.io/
-brew "hashicorp/tap/packer"        # auomate machine image https://www.packer.io/
-brew "hashicorp/tap/terraform"     # terraform https://www.terraform.io/
-brew "hashicorp/tap/waypoint"      # app deployment https://www.waypointproject.io/
 brew "hasura-cli"                  # hasura cli https://hasura.io/
 brew "helm"                        # k8s package manager https://helm.sh/
 brew "heroku"                      # heroku cli https://www.heroku.com/
-brew "hetty"         # http toolkit https://github.com/dstotijn/hetty
+brew "hetty"                       # http toolkit https://github.com/dstotijn/hetty
 brew "hss"                         # parallel ssh client https://github.com/six-ddc/hss
 brew "http-server"                 # https://github.com/http-party/http-server
 brew "httpie"                      # cURL replacement https://httpie.io/
@@ -108,7 +99,7 @@ brew "openssh"                     # ssh conectivity tool https://www.openssh.co
 brew "openssl"                     # Cryptography and SSL/TLS Toolkit https://openssl.org/
 brew "p7zip"                       # 7zip https://github.com/p7zip-project/p7zip
 brew "pgcli"                       # postgres cli https://www.pgcli.com/
-brew "pkgx"           # pkgx “run anything” https://github.com/pkgxdev/pkgx
+brew "pkgx"                        # pkgx “run anything” https://github.com/pkgxdev/pkgx
 brew "pnpm"                        # node package manager https://pnpm.io/
 brew "poppler"                     # pdf toolkit https://poppler.freedesktop.org/
 brew "portaudio"                   # audio library https://www.portaudio.com/
@@ -123,14 +114,13 @@ brew "rsync"                       # incremental file transfer https://rsync.sam
 brew "rustup-init"                 # Rust toolchain installer  https://github.com/rust-lang/rustup
 brew "scrcpy"                      # android screen mirroring https://github.com/Genymobile/scrcpy
 brew "speedtest"                   # speedtest cli https://www.speedtest.net/
-brew "sqld"            # LibSQL https://github.com/libsql/sqld
+brew "sqld"                        # LibSQL https://github.com/libsql/sqld
 brew "sqlite"                      # sqlite CLI https://sqlite.org/index.html
 brew "stern"                       # tail multiple pods on k8s https://github.com/stern/stern
 brew "stow"                        # symlink manager https://www.gnu.org/software/stow/
 brew "subversion"                  # svn https://subversion.apache.org/
 brew "svn"                         # svn
 brew "syncthing"                   # file sync tool https://syncthing.net/
-brew "telepresence"                # fast local k8s development https://www.telepresence.io/
 brew "telnet"                      # telent cli https://opensource.apple.com/
 brew "the_silver_searcher"         # code search https://github.com/ggreer/the_silver_searcher
 brew "tldr"                        # man page https://tldr.sh/
@@ -174,7 +164,6 @@ cask "iterm2"                     # terminal emulator https://www.iterm2.com/
 cask "jetbrains-toolbox"          # jetbrains tools manager https://www.jetbrains.com/toolbox-app/
 cask "lens"                       # k8s ide https://k8slens.dev/
 cask "maccy"                      # clipboard manager https://maccy.app/
-cask "meetingbar"                 # show meeting in menubar https://github.com/leits/MeetingBar
 cask "microsoft-edge"             # microsoft edge https://www.microsoft.com/en-us/edge
 cask "microsoft-office"           # ms office https://products.office.com/mac/microsoft-office-for-mac/
 cask "muzzle"                     # silence notifications https://muzzleapp.com/
