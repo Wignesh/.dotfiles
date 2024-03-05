@@ -33,7 +33,6 @@ brew "coreutils"                   # https://www.gnu.org/software/coreutils/
 brew "curl"                        # https://curl.se/
 brew "docker-slim"                 # docker image optimizer https://slimtoolkit.org/
 brew "dry"                         # docker manager cli https://github.com/moncho/dry
-brew "exa"                         # ls replacement https://the.exa.website/
 brew "ffmpeg"                      # media tool https://ffmpeg.org/
 brew "flyctl"                      # fly.io cli https://fly.io/
 brew "fswatch"                     # file change monitor https://github.com/emcrisostomo/fswatch
