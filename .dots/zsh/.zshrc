@@ -234,7 +234,7 @@ ZSH_THEME="robbyrussell"
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 SHOW_AWS_PROMPT=true
 
-plugins=(zsh-syntax-highlighting git alias-finder aws common-aliases docker docker-compose gh history kubectl zsh-autosuggestions zsh-completions zsh-nvm evalcache)
+plugins=(zsh-syntax-highlighting git alias-finder adb aws aliases common-aliases docker docker-compose gh history kubectl zsh-autosuggestions zsh-completions zsh-nvm evalcache npm)
 
 # autoload -U compinit && compinit
 
