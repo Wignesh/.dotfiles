@@ -25,7 +25,6 @@ brew "broot"                       # navigate directory trees https://dystroy.or
 brew "bun"                         # bun runtime & cli https://github.com/oven-sh/bun
 brew "caddy"                       # web server with https https://caddyserver.com/
 brew "cfn-lint"                    # cloudformation linter https://github.com/aws-cloudformation/cfn-lint/
-brew "cloudflare-wrangler"         # cli for cf workers https://github.com/cloudflare/wrangler
 brew "cloudflared"                 # cloudflare tunel client https://github.com/cloudflare/cloudflared
 brew "cmake"                       # cross-platform make https://cmake.org/
 brew "cmocka"                      # unit testing framework https://cmocka.org/
