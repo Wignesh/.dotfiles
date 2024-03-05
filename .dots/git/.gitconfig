@@ -37,11 +37,6 @@
 [init]
 	defaultBranch = main
 
-[credential "https://git-codecommit.*.amazonaws.com"]
-	helper =
-	helper = !aws codecommit credential-helper $@
-	UseHttpPath = true
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
