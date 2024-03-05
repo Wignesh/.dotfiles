@@ -13,7 +13,6 @@ tap "Qovery/replibyte"
 tap "teamookla/speedtest"
 tap "tursodatabase/tap"
 
-brew "1password-cli"               # 1password cli https://1password.com/
 brew "ack"                         # search tool https://beyondgrep.com/
 brew "ansible"                     # ansible cli https://www.ansible.com/
 brew "asciinema"                   # record & share terminal session https://asciinema.org/
@@ -145,6 +144,7 @@ cask "font-meslo-lg-nerd-font"
 cask "font-meslo-lg"
 cask "font-source-code-pro"
 
+cask "1password-cli"               # 1password cli https://1password.com/
 cask "alt-tab"                    # alt-tab replacement https://alt-tab-macos.netlify.app/
 cask "cloudflare-warp"            # warp client https://cloudflarewarp.com/
 cask "docker"                     # container runtime https://www.docker.com/
