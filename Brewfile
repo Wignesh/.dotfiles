@@ -11,7 +11,6 @@ tap "homebrew/core"
 tap "jesseduffield/lazygit"
 tap "libsql/sqld"
 tap "moncho/dry"
-tap "moncho/dry"
 tap "oven-sh/bun"
 tap "pkgxdev/made"
 tap "Qovery/replibyte"
@@ -40,7 +39,6 @@ brew "coredns"                     # dns server https://coredns.io/
 brew "coreutils"                   # https://www.gnu.org/software/coreutils/
 brew "curl"                        # https://curl.se/
 brew "docker-slim"                 # docker image optimizer https://slimtoolkit.org/
-brew "dry"                         # docker manager cli https://github.com/moncho/dry
 brew "dry"                         # docker manager cli https://github.com/moncho/dry
 brew "exa"                         # ls replacement https://the.exa.website/
 brew "ffmpeg"                      # media tool https://ffmpeg.org/
