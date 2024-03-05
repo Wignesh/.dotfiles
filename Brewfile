@@ -151,7 +151,6 @@ cask "figma"                      # collabrartive team https://www.figma.com/
 cask "firefox"                    # firefox browser https://www.mozilla.org/firefox/
 cask "google-chrome"              # google chrome browser https://www.google.com/chrome/
 cask "google-cloud-sdk"           # gcp cli, sdks https://cloud.google.com/sdk/
-cask "grammarly"                  # grammarly https://www.grammarly.com/
 cask "hovrly"                     # hovrly https://github.com/tarutin/hovrly
 cask "iina"                       # iina https://iina.io/
 cask "istat-menus"                # system monitor app https://bjango.com/mac/istatmenus/

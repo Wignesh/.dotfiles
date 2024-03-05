@@ -1,22 +1,15 @@
 setopt nobeep
-zmodload zsh/zprof
 start=$(date +%s)
-# set -x
-
-#### FIG ENV VARIABLES #### Hi
-# Please make sure this block is at the start of this file.
-# [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -26,7 +19,7 @@ export LDFLAGS="-L/usr/local/opt/python@3.7/lib"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=false
+export NVM_COMPLETION=true
 export DISABLE_AUTO_UPDATE=true
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -226,58 +219,19 @@ alias ysleep="sudo pmset -a disablesleep 0"
 
 alias pys="source venv/bin/activate"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 ZSH_THEME="robbyrussell"
 ZSH_ALIAS_FINDER_AUTOMATIC=true
 SHOW_AWS_PROMPT=true
 
-plugins=(zsh-syntax-highlighting git alias-finder adb aws aliases common-aliases docker docker-compose gh history kubectl zsh-autosuggestions zsh-completions zsh-nvm evalcache npm)
-
-# autoload -U compinit && compinit
+plugins=(zsh-syntax-highlighting git alias-finder adb aws aliases common-aliases docker docker-compose gh history kubectl zsh-autosuggestions zsh-completions zsh-nvm npm)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-# source $HOME/.p10k.zsh
-
-
-# if type brew &>/dev/null
-# then
-#   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-#   autoload -Uz compinit
-#   compinit
-# fi
-
-# autoload -U +X bashcompinit && bashcompinit
-
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-# [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
-
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"
-
-
-# Load Angular CLI autocompletion.
-# source <(ng completion script)
+source $HOME/.p10k.zsh
 
 # Created by `pipx` on 2022-12-14 18:44:59
 export PATH="$PATH:$HOME/.local/bin"
-
-# test -d "$HOME/.tea" && source <("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=zsh --silent)
 
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -285,6 +239,5 @@ export PATH="$PATH:$HOME/.local/bin"
 end=$(date +%s)
 runtime=$(python3 -c "print(${end} - ${start})")
 echo "Loaded in ${runtime} seconds."
-# set +x
 
 source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode

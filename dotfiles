@@ -127,6 +127,14 @@ install_zsh_plugins() {
         git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
         success "zsh-completions installed"
     fi
+
+    if [ -d ~/.oh-my-zsh/custom/plugins/zsh-nvm ]; then
+        warn "zsh-nvm already installed, skipping..."
+    else
+        info "Installing zsh-nvm..."
+        git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-nvm
+        success "zsh-nvm installed"
+    fi
 }
 
 install_power10k() {
