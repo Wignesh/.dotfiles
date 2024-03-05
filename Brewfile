@@ -178,5 +178,4 @@ cask "visual-studio-code"         # code editor https://code.visualstudio.com/
 cask "vlc"                        # multimedia player
 cask "webtorrent"                 # torrent client https://webtorrent.io/
 
-mas "OwlOCR", id: -2127579473
 mas "QuickShade", id: 931571202
